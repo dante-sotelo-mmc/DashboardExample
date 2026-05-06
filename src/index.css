@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #051424;
+  --color-surface-dim: #051424;
+  --color-surface-bright: #2c3a4c;
+  --color-surface-container: #122131;
+  --color-on-surface: #d4e4fa;
+  --color-primary-container: #00ff9d;
+  --color-on-primary-container: #007143;
+  --color-secondary-container: #424655;
+  --color-on-secondary-container: #b0b5c6;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "Space Grotesk", monospace;
+
+  --radius-xl: 0.5rem;
+  --radius-full: 9999px;
+}
+
+@layer components {
+  .glass-panel {
+    background: rgba(26, 31, 44, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top-color: rgba(255, 255, 255, 0.2);
+    border-left-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .status-pulse {
+    box-shadow: 0 0 0 0 rgba(0, 255, 157, 0.7);
+    animation: status-pulse-anim 2s infinite;
+  }
+
+  @keyframes status-pulse-anim {
+    0% { box-shadow: 0 0 0 0 rgba(0, 255, 157, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 255, 157, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 255, 157, 0); }
+  }
+}
+
+body {
+  @apply bg-surface text-on-surface antialiased;
+}
