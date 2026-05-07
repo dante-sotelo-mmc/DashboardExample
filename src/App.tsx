@@ -5,6 +5,7 @@ import { InfrastructurePage } from './pages/InfrastructurePage';
 import { TransactionsPage }   from './pages/TransactionsPage';
 import { SecurityPage }       from './pages/SecurityPage';
 import { NodesPage }          from './pages/NodesPage';
+import { ATMBranchPage } from './pages/ATMBranchPage';
 import {
   genTelemetry,
   genLatency,
@@ -20,6 +21,7 @@ const NAV = [
   { id: "trans",    label: "Transactions",   path: "/transactions"  },
   { id: "security", label: "Security",       path: "/security"      },
   { id: "nodes",    label: "Node Inventory", path: "/nodes"         },
+  { id: "atm", label: "ATM / Branch", path: "/atm" },
 ];
 
 export default function App() {
@@ -184,6 +186,7 @@ export default function App() {
           <Route path="/transactions" element={<TransactionsPage   key={tick} data={data} />} />
           <Route path="/security"     element={<SecurityPage       key={tick} data={data} />} />
           <Route path="/nodes"        element={<NodesPage          key={tick} data={data} />} />
+          <Route path="/atm" element={<ATMBranchPage key={tick} data={data} />} />
         </Routes>
 
       </div>
